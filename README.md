@@ -1,4 +1,4 @@
-# Doctor/Patient Management System
+# Doctor/Client Management System
 
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
 
@@ -18,7 +18,6 @@
 - Django3.2
 - Bootstrap 5
 - dotenv
-- whitenoise
 - mysqlclient
 
 ### Installing
@@ -48,6 +47,7 @@ touch .env
 5. Copy and paste environment variables in the .env file. _They will be shared privately._
 6. Make migrations.
 ```
+python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 7. Run the project.
