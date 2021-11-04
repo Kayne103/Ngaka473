@@ -16,6 +16,7 @@
 ### Prerequisites
 - Python3.9
 - Django3.2
+- Bootstrap 5
 - dotenv
 - whitenoise
 - mysqlclient
