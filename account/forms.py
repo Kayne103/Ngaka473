@@ -6,5 +6,6 @@ from account.models import Client
 class RegisterForm(UserCreationForm):
     class Meta:
         model = Client
-        fields = ['firstname', 'lastname', 'email', 'password',
-                  'confirmPassword', 'address', 'dateOfBirth', 'gender', 'cellNumber']
+        fields = ['firstname', 'lastname', 'email',
+                  'address', 'dateOfBirth', 'gender', 'cellNumber',
+                  'password1', 'password2']

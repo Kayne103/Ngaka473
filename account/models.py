@@ -1,8 +1,9 @@
 from django.db import models
 
-
+GENDER = ['male', 'female']
 # Create your models here.
 class Client(models.Model):
+    username = None
     email = models.EmailField(primary_key=True, default='null@example.com')
     firstname = models.CharField(max_length=25)
     lastname = models.CharField(max_length=25)
@@ -10,7 +11,9 @@ class Client(models.Model):
     address = models.CharField(max_length=40)
     gender = models.CharField(max_length=6)
     dateOfBirth = models.DateField(null=True)
-    password = models.CharField(max_length=40)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
     def __str__(self):
         return self.email

@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <title>Register</title>
+    <title>Verify account</title>
 </head>
 <body>
 
@@ -50,16 +50,9 @@
 <section class="hero d-flex align-items-center pt-4">
     <div class="container h-100 d-flex justify-content-center align-items-center">
         <div class="card text-white bg-dark mb-3">
-            <h5 class="card-header text-center">Register</h5>
+            <h5 class="card-header text-center">Verify account</h5>
             <div class="card-body">
-                <form method="post">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        {{ form.as_p }}
-                    </div>
 
-                    <input type="submit" class="btn btn-primary" value="Register">
-                </form>
             </div>
             <small class="card-footer text-center">
                 Already have an account?
