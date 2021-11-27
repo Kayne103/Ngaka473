@@ -52,13 +52,37 @@
         <div class="card text-white bg-dark mb-3">
             <h5 class="card-header text-center">Register</h5>
             <div class="card-body">
-                <form method="post">
+                <form name="registration-form" method="post">
                     {% csrf_token %}
-                    <div class="mb-3">
-                        {{ form.as_p }}
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            {{ form.firstname }}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            {{ form.lastname }}
+                        </div>
                     </div>
-
-                    <input type="submit" class="btn btn-primary" value="Register">
+                    <div class="mb-3">
+                        {{ form.email }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.address }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.cellNumber }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.dateOfBirth }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.password1 }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.password2 }}
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary" value="Register">
+                    </div>
                 </form>
             </div>
             <small class="card-footer text-center">

@@ -1,7 +1,6 @@
 from django.db import models
 
-GENDER = ['male', 'female']
-# Create your models here.
+
 class Client(models.Model):
     username = None
     email = models.EmailField(primary_key=True, default='null@example.com')
