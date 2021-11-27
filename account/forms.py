@@ -14,8 +14,9 @@ class RegisterForm(UserCreationForm):
                              widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
     address = forms.CharField(max_length=30, required=True,
                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Address'}))
-    dateOfBirth = forms.DateInput(attrs={'type': 'date', 'class': 'form-control', 'placeholder': 'Date of Birth'})
-    gender = forms.CharField(max_length=30, required=True)
+    dateOfBirth = forms.CharField(widget=forms.DateInput(
+        attrs={'type': 'date', 'class': 'form-control', 'placeholder': 'Date of Birth'}))
+    # gender = forms.CharField(max_length=30, required=True)
     cellNumber = forms.CharField(max_length=30, required=True,
                                  widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Cell Number'}))
     password1 = forms.CharField(max_length=30, required=True,
@@ -30,5 +31,13 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = Client
         fields = ['firstname', 'lastname', 'email',
-                  'address', 'dateOfBirth', 'gender', 'cellNumber',
+                  'address',  'cellNumber', 'dateOfBirth',
                   'password1', 'password2']
+        #  'gender',
+
+    def save(self, commit=True):
+        client = super((RegisterForm, self).save(commit=False))
+        client.email = self.cleaned_data['email']
+        if commit:
+            client.save()
+        return client

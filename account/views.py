@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from account.forms import RegisterForm
+from django.contrib import messages
 
 
 def index(request):
@@ -11,10 +12,14 @@ def login(request):
 
 
 def register(request):
-    form = RegisterForm()
+    form = RegisterForm(request.POST or None)
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
+            client = form.save()
+            # client.set_password(client.password)
+            # form.save(commit=False)
+            messages.success(request, 'Account created for ' + client)
             return redirect('validation')
     return render(request, 'account/register.html', {'form': form})
 

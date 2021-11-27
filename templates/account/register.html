@@ -3,6 +3,7 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
+    <meta name="viewport">
     <link rel="stylesheet" type="text/css" href="{% static 'account/main.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -49,10 +50,11 @@
 
 <section class="hero d-flex align-items-center pt-4">
     <div class="container h-100 d-flex justify-content-center align-items-center">
-        <div class="card text-white bg-dark mb-3">
+        <div>
+            <div class="card text-white bg-dark mb-3">
             <h5 class="card-header text-center">Register</h5>
             <div class="card-body">
-                <form name="registration-form" method="post">
+                <form name="registration-form" method="POST">
                     {% csrf_token %}
                     <div class="row">
                         <div class="mb-3 col-md-6">
@@ -69,10 +71,10 @@
                         {{ form.address }}
                     </div>
                     <div class="mb-3">
-                        {{ form.cellNumber }}
+                        {{ form.dateOfBirth }}
                     </div>
                     <div class="mb-3">
-                        {{ form.dateOfBirth }}
+                        {{ form.cellNumber }}
                     </div>
                     <div class="mb-3">
                         {{ form.password1 }}
@@ -89,6 +91,7 @@
                 Already have an account?
                 <a class="" href="login">Login</a>
             </small>
+        </div>
         </div>
     </div>
 </section>

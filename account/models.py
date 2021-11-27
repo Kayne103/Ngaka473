@@ -8,7 +8,8 @@ class Client(models.Model):
     lastname = models.CharField(max_length=25)
     cellNumber = models.CharField(max_length=10, unique=True)
     address = models.CharField(max_length=40)
-    gender = models.CharField(max_length=6)
+    password = models.CharField(max_length=40, default='null')
+    # gender = models.CharField(max_length=6)
     dateOfBirth = models.DateField(null=True)
 
     USERNAME_FIELD = 'email'
