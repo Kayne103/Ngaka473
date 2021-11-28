@@ -7,14 +7,17 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
             name='Assistant',
             fields=[
-                ('email', models.EmailField(default='null@example.com', max_length=254, primary_key=True, serialize=False)),
+                ('email',
+                 models.EmailField(default='null@example.com',
+                                   max_length=254,
+                                   primary_key=True,
+                                   serialize=False)),
                 ('firstname', models.CharField(max_length=25)),
                 ('lastname', models.CharField(max_length=25)),
                 ('password', models.CharField(max_length=40)),
@@ -23,7 +26,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Client',
             fields=[
-                ('email', models.EmailField(default='null@example.com', max_length=254, primary_key=True, serialize=False)),
+                ('email',
+                 models.EmailField(default='null@example.com',
+                                   max_length=254,
+                                   primary_key=True,
+                                   serialize=False)),
                 ('firstname', models.CharField(max_length=25)),
                 ('lastname', models.CharField(max_length=25)),
                 ('cellNumber', models.CharField(max_length=10, unique=True)),
@@ -36,7 +43,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Doctor',
             fields=[
-                ('email', models.EmailField(default='null@example.com', max_length=254, primary_key=True, serialize=False)),
+                ('email',
+                 models.EmailField(default='null@example.com',
+                                   max_length=254,
+                                   primary_key=True,
+                                   serialize=False)),
                 ('firstname', models.CharField(max_length=25)),
                 ('lastname', models.CharField(max_length=25)),
                 ('password', models.CharField(max_length=40)),
